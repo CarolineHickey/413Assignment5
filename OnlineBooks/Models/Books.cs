@@ -12,7 +12,10 @@ namespace OnlineBooks.Models
         public string Title { get; set; }
 
         [Required]
-        public string Author { get; set; }
+        public string FristName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
 
         [Required]
         public string Publisher { get; set; }
@@ -22,6 +25,9 @@ namespace OnlineBooks.Models
 
         [Required]
         public string Category { get; set; }
+
+        [Required]
+        public string Genre { get; set; }
 
         [Required]
         public string Price { get; set; }
