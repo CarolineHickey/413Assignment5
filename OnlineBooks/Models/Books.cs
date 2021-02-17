@@ -12,7 +12,7 @@ namespace OnlineBooks.Models
         public string Title { get; set; }
 
         [Required]
-        public string FristName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         public string LastName { get; set; }
@@ -21,6 +21,8 @@ namespace OnlineBooks.Models
         public string Publisher { get; set; }
 
         [Required]
+        //[RegularExpression(@"^\(?\d{3}?\)??-??\(?\d{9}?\)??-?$")]
+        [RegularExpression(@"^\d{3}-{1}\d{10}$")]
         public string ISBN { get; set; }
 
         [Required]

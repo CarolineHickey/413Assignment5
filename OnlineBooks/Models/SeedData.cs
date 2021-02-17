@@ -25,7 +25,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "Les Miserables",
-                        FristName = "Victor",
+                        FirstName = "Victor",
                         LastName = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
@@ -37,7 +37,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "Team of Rivals",
-                        FristName = "Doris Kearns",
+                        FirstName = "Doris Kearns",
                         LastName = "Goodwin",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
@@ -49,7 +49,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "The Snowball",
-                        FristName = "Alice",
+                        FirstName = "Alice",
                         LastName = "Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0451419439",
@@ -61,7 +61,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "American Ulysses",
-                        FristName = "Ronald C.",
+                        FirstName = "Ronald C.",
                         LastName = "White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254 ",
@@ -73,7 +73,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "Unbroken",
-                        FristName = "Laura",
+                        FirstName = "Laura",
                         LastName = "Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
@@ -85,7 +85,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "The Great Train Robbery",
-                        FristName = "Michael",
+                        FirstName = "Michael",
                         LastName = "Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
@@ -97,7 +97,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "Deep Work",
-                        FristName = "CaL",
+                        FirstName = "CaL",
                         LastName = "Newport",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
@@ -109,7 +109,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "It's Your Ship",
-                        FristName = "Michael",
+                        FirstName = "Michael",
                         LastName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455523023",
@@ -121,7 +121,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "The Virgin Way",
-                        FristName = "Richard",
+                        FirstName = "Richard",
                         LastName = "Branson",
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
@@ -133,7 +133,7 @@ namespace OnlineBooks.Models
                     new Books
                     {
                         Title = "Sycamore Row",
-                        FristName = "John",
+                        FirstName = "John",
                         LastName = "Grisham",
                         Publisher = "Bantam",
                         ISBN = "978-0553393613",
