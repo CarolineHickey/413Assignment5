@@ -11,16 +11,16 @@
     <div class="row">
         @foreach (var x in Model)
         {
-            <div class="col-sm-4">
-                <div class="text-center">
-                    <h4 class="text-primary">Title: @x.Title</h4>
-                    <p class="text-secondary">Author: @x.FirstName</p>
-                    <p class="text-secondary">Author: @x.LastName</p>
-                    <p class="text-secondary">Publisher: @x.Publisher</p>
-                    <p class="text-secondary">ISBN: @x.ISBN</p>
-                    <p class="text-secondary">Category: @x.Category</p>
-                    <p class="text-secondary">Category: @x.Genre</p>
-                    <p class="text-secondary">Price: @x.Price</p>
+            <div class="col-sm-4 card">
+                <div class="text-center card-body">
+                    <h4 class="text-primary card-title">Title: @x.Title</h4>
+                    <p class="text-secondary card-text">Author: @x.FirstName</p>
+                    <p class="text-secondary card-text">Author: @x.LastName</p>
+                    <p class="text-secondary card-text">Publisher: @x.Publisher</p>
+                    <p class="text-secondary card-text">ISBN: @x.ISBN</p>
+                    <p class="text-secondary card-text">Category: @x.Category</p>
+                    <p class="text-secondary card-text">Category: @x.Genre</p>
+                    <p class="text-secondary card-text">Price: @x.Price</p>
                 </div>
             </div>
 

@@ -38,6 +38,8 @@ namespace OnlineBooks
             //services.AddDbContext<OnlineBooksDbContext>(options =>
             //options.UseSqlite(Configuration.GetConnectionString("BooksConnection")));
 
+
+            //This allows the sessions to work on a miny personalized database
             services.AddScoped<IBookRespository, EFBookRespository>();
         }
 

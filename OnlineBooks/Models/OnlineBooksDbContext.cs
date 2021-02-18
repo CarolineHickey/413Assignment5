@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OnlineBooks.Models
 {
-    //inheriting from DbContext
+    //inheriting from DbContext, This is apart of the EntityFramworkCore
+    //DvContext represent instances of your entities/ session with the database
     //CRUD is happening within the context class
     public class OnlineBooksDbContext : DbContext
     {
