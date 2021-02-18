@@ -7,17 +7,23 @@
 <div class="text-center">
     <h1 class="display-4">Online Book Store</h1>
 </div>
+<div class="container .bg-dark" >
+    <div class="row">
+        @foreach (var x in Model)
+        {
+            <div class="col-sm-4">
+                <div class="text-center">
+                    <h4 class="text-primary">Title: @x.Title</h4>
+                    <p class="text-secondary">Author: @x.FirstName</p>
+                    <p class="text-secondary">Author: @x.LastName</p>
+                    <p class="text-secondary">Publisher: @x.Publisher</p>
+                    <p class="text-secondary">ISBN: @x.ISBN</p>
+                    <p class="text-secondary">Category: @x.Category</p>
+                    <p class="text-secondary">Category: @x.Genre</p>
+                    <p class="text-secondary">Price: @x.Price</p>
+                </div>
+            </div>
 
-@foreach(var x in Model)
-{
-<div class="text-center">
-    <h4>Title: @x.Title</h4>
-    <p>Author: @x.FirstName</p>
-    <p>Author: @x.LastName</p>
-    <p>Publisher: @x.Publisher</p>
-    <p>ISBN: @x.ISBN</p>
-    <p>Category: @x.Category</p>
-    <p>Category: @x.Genre</p>
-    <p>Price: @x.Price</p>
+        }
+    </div>
 </div>
-}
