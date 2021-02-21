@@ -31,7 +31,8 @@ namespace OnlineBooks.Models
                         ISBN = "978-0451419439",
                         Category = "Fiction",
                         Genre = "Classic",
-                        Price = "$9.95"
+                        Price = "$9.95",
+                        Pages = 1488
                     },
 
                     new Books
@@ -43,7 +44,8 @@ namespace OnlineBooks.Models
                         ISBN = "978-0743270755",
                         Category = "Non-Fiction",
                         Genre = "Biography",
-                        Price = "$14.58"
+                        Price = "$14.58",
+                        Pages = 944
                     },
 
                     new Books
@@ -55,7 +57,8 @@ namespace OnlineBooks.Models
                         ISBN = "978-0451419439",
                         Category = "Non-Fiction",
                         Genre = "Biography",
-                        Price = "$21.54"
+                        Price = "$21.54",
+                        Pages = 832
                     },
 
                     new Books
@@ -67,7 +70,8 @@ namespace OnlineBooks.Models
                         ISBN = "978-0812981254 ",
                         Category = "Non-Fiction",
                         Genre = "Biography",
-                        Price = "$11.61"
+                        Price = "$11.61",
+                        Pages = 864
                     },
 
                     new Books
@@ -79,7 +83,8 @@ namespace OnlineBooks.Models
                         ISBN = "978-0812974492",
                         Category = "Non-Fiction",
                         Genre = "Historical",
-                        Price = "$13.33"
+                        Price = "$13.33",
+                        Pages = 528
                     },
 
                     new Books
@@ -92,6 +97,7 @@ namespace OnlineBooks.Models
                         Category = "Fiction",
                         Genre = "Historical Fiction",
                         Price = "$15.95",
+                        Pages = 288
                     },
 
                     new Books
@@ -104,6 +110,7 @@ namespace OnlineBooks.Models
                         Category = "Non-Fiction",
                         Genre  = "Self-Help",
                         Price = "$14.99",
+                        Pages = 304
                     },
 
                     new Books
@@ -116,6 +123,7 @@ namespace OnlineBooks.Models
                         Category = "Non-Fiction",
                         Genre = "Self-Help",
                         Price = "$21.66",
+                        Pages = 240
                     },
 
                     new Books
@@ -128,6 +136,7 @@ namespace OnlineBooks.Models
                         Category = "Non-Fiction",
                         Genre = "Business",
                         Price = "$29.16",
+                        Pages = 400
                     },
 
                     new Books
@@ -140,7 +149,48 @@ namespace OnlineBooks.Models
                         Category = "Fiction",
                         Genre = "Thrillers", 
                         Price = "$15.03",
+                        Pages = 642
+                    },
+
+                    new Books
+                    {
+                        Title = "Pride and Prejudice",
+                        FirstName = "Jane",
+                        LastName = "Austen",
+                        Publisher = "Thomas Egerton",
+                        ISBN = "978-1503290563",
+                        Category = "Romance",
+                        Genre = "Fiction",
+                        Price = "$9.45",
+                        Pages = 284
+                    },
+
+                    new Books
+                    {
+                        Title = "The Help",
+                        FirstName = "Kathryn",
+                        LastName = "Stockett",
+                        Publisher = "Berkley",
+                        ISBN = "978-0425232200",
+                        Category = "Historical",
+                        Genre = "Fiction",
+                        Price = "$14.56",
+                        Pages = 524
+                    },
+
+                    new Books
+                    {
+                        Title = "To Kill a Mocking Bird",
+                        FirstName = "Harper",
+                        LastName = "Lee",
+                        Publisher = "Grand Central Publishing",
+                        ISBN = "978-0446310789",
+                        Category = "Historical",
+                        Genre = "Fiction",
+                        Price = "$18.99",
+                        Pages = 281
                     }
+                    
 
                 ) ;
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OnlineBooks.Models;
+using OnlineBooks.Models.ViewModels;
 
 namespace OnlineBooks.Controllers
 {
@@ -15,6 +16,8 @@ namespace OnlineBooks.Controllers
 
         private IBookRespository _respository;
 
+        public int PageSize = 5; //This way the page will only allow 5 items per page
+
         //controller
         public HomeController(ILogger<HomeController> logger, IBookRespository respository)
         {
@@ -22,9 +25,23 @@ namespace OnlineBooks.Controllers
             _respository = respository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1) //a Query!! in a language called linq!
         {
-            return View(_respository.Books);
+            return View(new BookListViewModel
+            {
+                Books = _respository.Books
+                .OrderBy(b => b.BookId)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _respository.Books.Count()
+                }
+
+            }) ; 
         }
 
         public IActionResult Privacy()

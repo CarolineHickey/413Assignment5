@@ -33,5 +33,8 @@ namespace OnlineBooks.Models
 
         [Required]
         public string Price { get; set; }
+
+        [Required]
+        public int Pages { get; set; }
     }
 }
