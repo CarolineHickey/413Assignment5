@@ -4,9 +4,11 @@
 
 @model BookListViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Online Book Store</h1>
-</div>
+
+    <div class="jumbotron" style="        background-image: url(https://images-na.ssl-images-amazon.com/images/I/81YI+R5RwFL.jpg)">
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+
 <div class="container" >
     <div class="row m-1 p-1 justify-content-evenly">
         @foreach (var x in Model.Books)
@@ -21,8 +23,8 @@
                     <p class="text-secondary card-text">Category: @x.Category</p>
                     <p class="text-secondary card-text">Category: @x.Genre</p>
                     <p class="text-secondary card-text">Number of Pages: @x.Pages</p>
-                    <span class="badge badge-pill badge-faded">
-                        <big> <p class="text-secondary card-text">Price: @x.Price</p></big>
+                    <span class="badge badge-pill badge- success">
+                        <big> Price: @x.Price</big>
                     </span>
                 </div>
             </div>
@@ -32,6 +34,7 @@
 </div>
 
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-     page-class-normal ="btn-outline-primary" page-class-selected="btn-primary" class="btn-group pull-right m-1">
+     page-class-normal="btn-outline-light" page-class-selected="btn-light" class="pager">
+    <!--  btn-group pull-right m-1-->
 
 </div>
