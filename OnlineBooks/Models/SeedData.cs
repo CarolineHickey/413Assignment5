@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
+//IN THIS CLASS WE ARE SEEDING THE DATABASE BY CREATING NEW INSTANCES OF THE BOOKS OBJECTS.
 namespace OnlineBooks.Models
 {
     public class SeedData

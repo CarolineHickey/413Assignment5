@@ -3,6 +3,7 @@ namespace OnlineBooks.Models.ViewModels
 {
     public class PagingInfo
     {
+        //Gather-set all the paging info needed to build the pagination
         public int TotalNumItems { get; set; }
 
         public int ItemsPerPage { get; set; }

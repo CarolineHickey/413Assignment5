@@ -35,6 +35,8 @@ namespace OnlineBooks.Infrastructure
         public string PageClassSelected { get; set; }
 
         //void = method
+        //This method helps create dynamic html on the fly! It builds a div with an a tag that displays the current page.
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
@@ -52,8 +54,10 @@ namespace OnlineBooks.Infrastructure
                     tag.AddCssClass(i == PageModel.CurrentPage ? PageClassSelected : PageClassNormal);
                 };
 
+                //append the tag object to the innner html!
                 tag.InnerHtml.Append(i.ToString());
 
+                //give the tag object to the result object and display it to the html
                 result.InnerHtml.AppendHtml(tag);
             }
 

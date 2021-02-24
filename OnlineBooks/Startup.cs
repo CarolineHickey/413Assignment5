@@ -68,6 +68,8 @@ namespace OnlineBooks
                 endpoints.MapControllerRoute(
                    // name: "default",
                    // pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                    // This is where I change the url to be /P#
                    "pagination",
                    "/P{page}",
                    new { Controller = "Home", action = "Index" });

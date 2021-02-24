@@ -25,6 +25,7 @@ namespace OnlineBooks.Controllers
             _respository = respository;
         }
 
+        //When the Index page is called, we will pass in all the info neccesary to build the pagination on the fly!
         public IActionResult Index(int page = 1) //a Query!! in a language called linq!
         {
             return View(new BookListViewModel

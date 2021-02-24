@@ -5,6 +5,7 @@ namespace OnlineBooks.Models
 {
     public class Books
     {
+           //All the attributes stored for each Book
         [Key]
         public int BookId { get; set; }
 
