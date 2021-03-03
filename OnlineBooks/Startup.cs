@@ -31,7 +31,9 @@ namespace OnlineBooks
             //sets up a connection strinng the configuration holds on to the information for you?
             services.AddDbContext<OnlineBooksDbContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BooksConnection"]); 
+
+               options.UseSqlite(Configuration["ConnectionStrings:BooksConnection"]);
+               //options.UseSqlServer(Configuration["ConnectionStrings:BooksConnection"]); 
 
            });
 
@@ -63,17 +65,33 @@ namespace OnlineBooks
 
             app.UseAuthorization();
 
+            //Works like an if else statement
+            //What do we want the URLs to look like, and where will we send them when
+            //They type something like this in
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                   // name: "default",
-                   // pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("categorypage",
+                  "{category}/{page:int}",
+                  new { Controller = "Home", action = "Index" }
+                  );
 
+                endpoints.MapControllerRoute("page",
+                 "Books/{page:int}",
+                 new { Controller = "Home", action = "Index" }
+                 );
+
+                endpoints.MapControllerRoute("category",
+                  "{category}",
+                  new { Controller = "Home", action = "Index", page = 1 }
+                  );
+
+                endpoints.MapControllerRoute(
                     // This is where I change the url to be /P#
                    "pagination",
                    "/P{page}",
-                   new { Controller = "Home", action = "Index" });
+                   new { Controller = "Home", action = "Index" }) ;
 
+                //Takes you to the default Index if nothing is typed into the URL
                 endpoints.MapDefaultControllerRoute();
             });
 

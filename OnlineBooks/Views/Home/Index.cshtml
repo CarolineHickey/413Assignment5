@@ -5,36 +5,27 @@
 @model BookListViewModel
 
 
-    <div class="jumbotron" style="        background-image: url(https://images-na.ssl-images-amazon.com/images/I/81YI+R5RwFL.jpg)">
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="jumbotron" style="        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuX3OuBVgfAlesgZgYUW9mVIf-Ut_eIWl9ew&usqp=CAU)">
+<br /><br />
     </div>
 
-<div class="container" >
-    <div class="row m-1 p-1 justify-content-evenly">
-        @foreach (var x in Model.Books)
-        {
-            <div class="col-sm-4 card">
-                <div class="text-center card-body bg-faded">
-                    <h4 class="text-primary card-title">Title: @x.Title</h4>
-                    <p class="text-secondary card-text">Author: @x.FirstName</p>
-                    <p class="text-secondary card-text">Author: @x.LastName</p>
-                    <p class="text-secondary card-text">Publisher: @x.Publisher</p>
-                    <p class="text-secondary card-text">ISBN: @x.ISBN</p>
-                    <p class="text-secondary card-text">Category: @x.Category</p>
-                    <p class="text-secondary card-text">Category: @x.Genre</p>
-                    <p class="text-secondary card-text">Number of Pages: @x.Pages</p>
-                    <span class="badge badge-pill badge- success">
-                        <big> Price: @x.Price</big>
-                    </span>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row m-1 p-1 justify-content-evenly">
+            @foreach (var x in Model.Books)
+            {
+                <!-- This is a partial view.
+                    Book Summary is the cshtml page we
+                    created to make it look a little better-->
+                <partial name="BookSummary" model="x"/>
 
-        }
+            }
+        </div>
     </div>
-</div>
 
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-     page-class-normal="btn-outline-light" page-class-selected="btn-light" class="pager">
+     page-class-normal="btn-outline-light"
+     page-class-selected="btn-light" page-url-category="@Model.CurrentCategory"
+     class="pager">
     <!--  btn-group pull-right m-1-->
 
 </div>

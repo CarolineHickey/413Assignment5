@@ -9,6 +9,15 @@
             IS 413 - Favorite Books
         </span>
     </div>
-@RenderBody() 
+    <div class="row m-1 p-1">
+        <div class="col-3">
+            <h1> Menu </h1>
+            <!--vc = view component-->
+            <vc:navigation-menu />
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
 </body>
 </html>

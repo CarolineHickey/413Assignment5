@@ -1,0 +1,18 @@
+﻿@model Books
+
+
+<div class="col-sm-4 card">
+    <div class="text-center card-body bg-faded">
+        <h4 class="text-dark card-title">Title: @Model.Title</h4>
+        <p class="text-secondary card-text">Author: @Model.FirstName</p>
+        <p class="text-secondary card-text">Author: @Model.LastName</p>
+        <p class="text-secondary card-text">Publisher: @Model.Publisher</p>
+        <p class="text-secondary card-text">ISBN: @Model.ISBN</p>
+        <p class="text-secondary card-text">Category: @Model.Category</p>
+        <p class="text-secondary card-text">Category: @Model.Genre</p>
+        <p class="text-secondary card-text">Number of Pages: @Model.Pages</p>
+        <span class="badge badge-pill badge- success">
+            <big> Price: @Model.Price</big>
+        </span>
+    </div>
+</div>

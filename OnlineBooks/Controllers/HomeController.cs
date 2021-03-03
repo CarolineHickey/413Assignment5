@@ -26,11 +26,14 @@ namespace OnlineBooks.Controllers
         }
 
         //When the Index page is called, we will pass in all the info neccesary to build the pagination on the fly!
-        public IActionResult Index(int page = 1) //a Query!! in a language called linq!
+        public IActionResult Index(string category, int page = 1) //a Query!! in a language called linq!
         {
             return View(new BookListViewModel
             {
                 Books = _respository.Books
+
+                //This gets us the right data when selecting a certain category
+                .Where(p => category == null || p.Category == category)
                 .OrderBy(b => b.BookId)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize)
@@ -39,8 +42,13 @@ namespace OnlineBooks.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _respository.Books.Count()
-                }
+
+                    //figure out how many pages to display at the bottom for our pagination. 
+                    TotalNumItems =  category == null ? _respository.Books.Count() :
+                    _respository.Books.Where(x => x.Category == category).Count()
+                },
+
+                CurrentCategory = category
 
             }) ; 
         }
