@@ -12,7 +12,7 @@ namespace OnlineBooks.Models
 
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem (Books books, int qty)
+        public virtual void AddItem (Books books, int qty)
         {
             CartLine line = Lines
                 .Where(b => b.Books.BookId == books.BookId)
@@ -32,10 +32,10 @@ namespace OnlineBooks.Models
             }
         }
 
-        public void RemoveLine(Books books) =>
+        public virtual void RemoveLine(Books books) =>
             Lines.RemoveAll(x => x.Books.BookId == books.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public decimal ComputeTotalSum() => Lines.Sum(e => e.Books.Price * e.Quantity);
         

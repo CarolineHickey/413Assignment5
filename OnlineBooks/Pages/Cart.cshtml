@@ -2,7 +2,9 @@
 @{
 
 }
+
 @model OnlineBooks.Pages.CartModel
+
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 <h2>Your Cart</h2>
 
@@ -21,8 +23,15 @@
             <tr>
                 <td class="text-left">@line.Books.Title</td>
                 <td class="text-center">@line.Quantity</td>
-                <td class="text-right">@line.Books.Price</td>
+                <td class="text-right">@((line.Books.Price).ToString("c", System.Globalization.CultureInfo.GetCultureInfo("en-us")))</td>
                 <td class="text-right">@((line.Quantity * line.Books.Price).ToString("c", System.Globalization.CultureInfo.GetCultureInfo("en-us")))</td>
+                <td class="text-center">
+                    <form asp-page-handler="Remove" method="post">
+                        <input type="hidden" name="BookId" value="@line.Books.BookId"/>
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger" asp-page-handler="Remove">Remove</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
