@@ -10,6 +10,7 @@ namespace OnlineBooks.Models.ViewModels
 
         public int CurrentPage { get; set; }
 
+        //Figures out how many pages that need to show up at the bottom of a page
         public int TotalPages => (int)(Math.Ceiling((decimal)TotalNumItems / ItemsPerPage));
     }
 }

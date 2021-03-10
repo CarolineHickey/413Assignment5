@@ -10,31 +10,35 @@ using System.Collections.Generic; //added
 
 namespace OnlineBooks.Infrastructure
 {
+    //Set which tag this tag helper will be for and the name of the tag helper
     [HtmlTargetElement("div", Attributes = "page-model")]
 
+    //inherit from the TagHelper Class
     public class PageLinkTagHelper : TagHelper
     {
+        //holds the info we need for the iurlhelperfactory object - in memory as long as the object is alive
         private IUrlHelperFactory urlHelperFactory;
 
-        public PageLinkTagHelper (IUrlHelperFactory hp) //constructor
+        //CONSTRUCTOR: help set the iurlfactory object - set the properties
+        public PageLinkTagHelper (IUrlHelperFactory hp) 
         {
             urlHelperFactory = hp;
         }
 
-        [ViewContext]
-        [HtmlAttributeNotBound]
+        [ViewContext]//Hover over this
+        [HtmlAttributeNotBound] //Just not to any html attributes
         public ViewContext ViewContext { get; set; }
 
-        public PagingInfo PageModel { get; set; }
+        public PagingInfo PageModel { get; set; } //Pulling in the object from the PagingInfo (internal) Class
 
-        public string PageAction { get; set; }
+        public string PageAction { get; set; } //this looks like page-action=""
 
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
 
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 
 
-        public bool PageClassesEnabled { get; set; }
+        public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
@@ -53,7 +57,7 @@ namespace OnlineBooks.Infrastructure
 
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 if(PageClassesEnabled)

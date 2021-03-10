@@ -16,7 +16,8 @@ namespace OnlineBooks.Controllers
 
         private IBookRespository _respository;
 
-        public int PageSize = 5; //This way the page will only allow 5 items per page
+        //This way the page will only allow 5 items per page
+        public int PageSize = 5; 
 
         //controller
         public HomeController(ILogger<HomeController> logger, IBookRespository respository)
@@ -26,21 +27,22 @@ namespace OnlineBooks.Controllers
         }
 
         //When the Index page is called, we will pass in all the info neccesary to build the pagination on the fly!
-        public IActionResult Index(string category, int page = 1) //a Query!! in a language called linq!
+        public IActionResult Index(string category, int pageNum = 1) //a Query!! in a language called linq!
         {
             return View(new BookListViewModel
             {
-                Books = _respository.Books
+                //handing in whatever Books are sitting in the Database
+                Books = _respository.Books //sets all the object info for the Books
 
-                //This gets us the right data when selecting a certain category
-                .Where(p => category == null || p.Category == category)
-                .OrderBy(b => b.BookId)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
+                //Linq sql statement to bring the right data back
+                .Where(p => category == null || p.Category == category)//This gets us the right data when selecting a certain category
+                .OrderBy(b => b.BookId) //sort by BookId
+                .Skip((pageNum - 1) * PageSize) //***WHAT IS THIS?***
+                .Take(PageSize) //give me the items per page
                 ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
 
                     //figure out how many pages to display at the bottom for our pagination. 

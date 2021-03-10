@@ -33,7 +33,7 @@ namespace OnlineBooks.Models
         public string Genre { get; set; }
 
         [Required]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         public int Pages { get; set; }

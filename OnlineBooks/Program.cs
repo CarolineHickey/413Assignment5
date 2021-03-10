@@ -16,6 +16,8 @@ namespace OnlineBooks
             CreateHostBuilder(args).Build().Run();
         }
 
+
+        //THIS IS THE BEGINNING OF THE PROGRAM!
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
